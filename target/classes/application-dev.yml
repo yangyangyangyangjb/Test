@@ -1,0 +1,38 @@
+# 开发环境配置
+spring:
+  profiles: dev
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/dev?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: shipcenter
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://10.110.91.193:5435/cloudb7r92110
+    username: cloudb7r92110
+    password: zjgl6530ZJGL^%#)
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database: postgresql
+    show-sql: false
+  rabbitmq:
+    host: 192.168.184.129 #rabbitmq服务器地址
+    port: 5672 #rabbitmq端口号
+    virtual-host: /hmall #rabbitmq虚拟主机
+    username: hmall #rabbitmq用户名
+    password: 123 #rabbitmq密码
+    listener:
+      simple:
+        prefetch: 1 #每次最多消费多少条消息
+
+server:
+  port: 8083
+
+socket:
+  port: 8084
