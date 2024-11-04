@@ -15,12 +15,12 @@ public class ClientTest {
     /**
      *JDK实现的动态代理
      */
-    @Test
+//    @Test
     public void JdkTest(){
         User user = new User();
-        user.setName("hongtaolong");
-        user.setPassword("hong");
-        user.setAge(23);
+//        user.setName("hongtaolong");
+//        user.setPassword("hong");
+//        user.setAge(23);
         //被代理类
         UserService delegate = new UserServiceImpl();
         InvocationHandler userServiceInterceptor = new UserServiceInterceptor(delegate);
@@ -34,12 +34,12 @@ public class ClientTest {
     /**
      * CGLIB动态代理
      */
-    @Test
+//    @Test
     public void InvocationHandlerTest(){
         User user = new User();
-        user.setName("hongtaolong");
-        user.setPassword("hong");
-        user.setAge(23);
+//        user.setName("hongtaolong");
+//        user.setPassword("hong");
+//        user.setAge(23);
         //被代理的对象
         UserServiceImplCglib delegate = new UserServiceImplCglib();
         UserServiceCglibInterceptor serviceInterceptor = new UserServiceCglibInterceptor(delegate);

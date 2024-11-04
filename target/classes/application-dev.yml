@@ -1,18 +1,18 @@
 # 开发环境配置
 spring:
   profiles: dev
-#  datasource:
-#    url: jdbc:mysql://127.0.0.1:3306/dev?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-#    username: root
-#    password: 123456
-#    driver-class-name: com.mysql.jdbc.Driver
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false
+    username: root
+    password: yjb1201dl
+    driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: shipcenter
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://10.110.91.193:5435/cloudb7r92110
-    username: cloudb7r92110
-    password: zjgl6530ZJGL^%#)
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://10.110.91.193:5435/cloudb7r92110
+#    username: cloudb7r92110
+#    password: zjgl6530ZJGL^%#)
   jpa:
     generate-ddl: false
     hibernate:
@@ -36,3 +36,7 @@ server:
 
 socket:
   port: 8084
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

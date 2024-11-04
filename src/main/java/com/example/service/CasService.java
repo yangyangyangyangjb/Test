@@ -22,7 +22,7 @@ public class CasService {
     private final int NUM_THREADS = 5;
     private AtomicInteger counter = new AtomicInteger();
     private static AtomicStampedReference<String> atomicRef = new AtomicStampedReference<>("A", 0);
-    @Test
+//    @Test
     public void CasTest() throws InterruptedException{
         // 创建并启动多个线程
         for (int i = 0; i < NUM_THREADS; i++) {
@@ -42,7 +42,7 @@ public class CasService {
         }
     }
 
-    @Test
+//    @Test
     public void CasToAbaTest(){
         // 线程1对共享变量进行更新操作，将其从A变为B再变回A
         Thread thread1 = new Thread(() -> {

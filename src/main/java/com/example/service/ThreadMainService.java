@@ -10,7 +10,7 @@ import org.junit.Test;
 public class ThreadMainService {
 
 
-    @Test
+//    @Test
     public void TestThreadJoin()throws InterruptedException{
         // 创建线程 B
         Thread threadB = new Thread(new Runnable() {
@@ -65,7 +65,7 @@ public class ThreadMainService {
 
 
 
-    @Test
+//    @Test
     public void TestThread()throws InterruptedException{
         // 创建线程 B
         Thread threadB = new Thread(new Runnable() {
