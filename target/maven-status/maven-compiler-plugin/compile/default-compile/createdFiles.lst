@@ -15,11 +15,13 @@ com\example\service\SnakeGame$1.class
 com\example\service\ThreadMainService$2.class
 com\example\service\IBusinessSocketService.class
 com\example\common\SocketServers.class
+com\example\service\impl\UsersServiceImpl.class
 com\example\controller\DepositProductController.class
 com\example\controller\TestSimpleQueueController.class
 com\example\service\SpgtmBankTransDetailService.class
 com\example\service\CasService$CounterRunnable.class
 com\example\entity\JtgkDqckCsFhSjEntity.class
+com\example\service\UsersService.class
 com\example\service\impl\UserServiceInterceptor.class
 com\example\service\UserServiceImplCglib.class
 com\example\entity\StringUtil.class
@@ -33,6 +35,7 @@ com\example\entity\Result.class
 com\example\entity\BankTransDetail.class
 com\example\service\ThreadMainService.class
 com\example\entity\UserInfo.class
+com\example\mapper\UserMapper.class
 com\example\service\ThreadAService.class
 com\example\service\impl\SpgtmBankTransDetailServiceImpl.class
 com\example\controller\UsersController.class
