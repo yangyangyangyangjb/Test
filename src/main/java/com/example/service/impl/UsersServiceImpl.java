@@ -6,9 +6,9 @@ import com.example.entity.User;
 import com.example.mapper.UserMapper;
 import com.example.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @Slf4j
 public class UsersServiceImpl implements UsersService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     @Override
