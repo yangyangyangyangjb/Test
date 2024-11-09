@@ -1,8 +1,0 @@
-1.首先开启docket
-命令：service docker start
-2.开启rabbitmq
-命令：docker start some-rabbitmq
-
-gitHub令牌：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
-
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPeBjuGyUgfJ9UGFthVUkW8fnogyKNXbmX2fRDSTv/Dq 3025257293@qq.com
