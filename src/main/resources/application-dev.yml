@@ -8,11 +8,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: shipcenter
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://10.110.91.193:5435/cloudb7r92110
-#    username: cloudb7r92110
-#    password: zjgl6530ZJGL^%#)
   jpa:
     generate-ddl: false
     hibernate:
