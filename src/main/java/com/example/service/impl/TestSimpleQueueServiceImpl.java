@@ -2,7 +2,6 @@ package com.example.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.entity.Result;
-import com.example.service.SpringRabbitListener;
 import com.example.service.TestSimpleQueueService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
