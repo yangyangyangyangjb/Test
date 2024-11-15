@@ -3,6 +3,6 @@
 2.开启rabbitmq
 命令：docker start some-rabbitmq
 
-gitHub令牌：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
+gitHub令牌：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
 
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPeBjuGyUgfJ9UGFthVUkW8fnogyKNXbmX2fRDSTv/Dq 3025257293@qq.com
