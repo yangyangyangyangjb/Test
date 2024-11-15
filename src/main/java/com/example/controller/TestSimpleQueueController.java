@@ -23,13 +23,49 @@ public class TestSimpleQueueController {
     private TestSimpleQueueService testSimpleQueueService;
 
     /**
-     * 队列测试消费者
+     * 队列测试
      * @param jsonObject
      * @return
      */
-    @PostMapping("/queueTestXF")
-    public Result queueTestXF(@RequestBody JSONObject jsonObject){
+    @PostMapping("/queueTest")
+    public Result queueTest(@RequestBody JSONObject jsonObject){
 
         return testSimpleQueueService.queueTest(jsonObject);
+    }
+
+    /**
+     * 队列测试
+     * 广播路由
+     * @param jsonObject
+     * @return
+     */
+    @PostMapping("/fanout")
+    public Result fanout(@RequestBody JSONObject jsonObject){
+
+        return testSimpleQueueService.fanout(jsonObject);
+    }
+
+    /**
+     * 队列测试
+     * 定向路由
+     * @param jsonObject
+     * @return
+     */
+    @PostMapping("/direct")
+    public Result direct(@RequestBody JSONObject jsonObject){
+
+        return testSimpleQueueService.direct(jsonObject);
+    }
+
+    /**
+     * 队列测试
+     * topic
+     * @param jsonObject
+     * @return
+     */
+    @PostMapping("/topic")
+    public Result topic(@RequestBody JSONObject jsonObject){
+
+        return testSimpleQueueService.topic(jsonObject);
     }
 }
