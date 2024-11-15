@@ -8,8 +8,9 @@ import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import static java.lang.Thread.sleep;
-
+/**
+ * rabbitmq 消费者监听类
+ */
 @Slf4j
 @Component
 public class SpringRabbitListener {

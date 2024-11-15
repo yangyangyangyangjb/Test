@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ * rabbitmq 队列发送接口类
+ */
 @RestController
 @RequestMapping("/testSimpleQueue")
 @Slf4j

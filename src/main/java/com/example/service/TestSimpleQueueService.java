@@ -5,5 +5,5 @@ import com.example.entity.Result;
 import org.junit.Test;
 
 public interface TestSimpleQueueService {
-    public Result queueTest(JSONObject jsonObject);
+    Result queueTest(JSONObject jsonObject);
 }
