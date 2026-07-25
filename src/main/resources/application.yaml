@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: demo2
+    name: javaAiStudent
   ai:
     deepseek:
       api-key: sk-5b3f957c53574a49b1cec161a4f8293c

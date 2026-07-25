@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.javaaistudent;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.http.MediaType;

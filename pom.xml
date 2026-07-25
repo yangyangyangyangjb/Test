@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo2</artifactId>
+    <artifactId>javaAiStudent-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo2</name>
-    <description>demo2</description>
+    <name>javaAiStudent</name>
+    <description>Spring AI + DeepSeek 学习项目</description>
     <url/>
     <licenses>
         <license/>
