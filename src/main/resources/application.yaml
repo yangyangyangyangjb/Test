@@ -1,0 +1,12 @@
+server:
+  port: 18080
+
+spring:
+  application:
+    name: demo2
+  ai:
+    deepseek:
+      api-key: sk-5b3f957c53574a49b1cec161a4f8293c
+      chat:
+        model: deepseek-v4-flash
+        temperature: 0.7
