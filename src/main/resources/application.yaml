@@ -1,0 +1,28 @@
+server:
+  port: 18080
+
+spring:
+  autoconfigure:
+    exclude:
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeMultimodalEmbeddingAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioSpeechAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioTranscriptionAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeEmbeddingAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeImageAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeRerankAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeVideoAutoConfiguration
+      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAgentAutoConfiguration
+  application:
+    name: javaAiStudent-java
+  ai:
+    deepseek:
+      api-key: sk-5b3f957c53574a49b1cec161a4f8293c
+      chat:
+        model: deepseek-v4-flash
+        temperature: 0.7
+    # 阿里百炼 DashScope（通义千问）
+    dashscope:
+      api-key: sk-ws-H.EIMYEXE.MAym.MEYCIQCw_s-3HFqnC9ojNRw3HsiKbhwBwMoEp4QbrnENpFPUwwIhAMGsw5UKHBSVRjgp8birECTaoI15VR9Vg3LlEa4OPIAh
+      chat:
+        options:
+          model: qwen-plus
