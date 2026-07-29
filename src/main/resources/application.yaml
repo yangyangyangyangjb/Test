@@ -5,10 +5,8 @@ spring:
   autoconfigure:
     exclude:
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeMultimodalEmbeddingAutoConfiguration
-      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioSpeechAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioTranscriptionAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeEmbeddingAutoConfiguration
-      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeImageAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeRerankAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeVideoAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAgentAutoConfiguration
@@ -20,9 +18,17 @@ spring:
       chat:
         model: deepseek-v4-flash
         temperature: 0.7
-    # 阿里百炼 DashScope（通义千问）
+    # 阿里百炼 DashScope（通义千问 + 通义万相 + CosyVoice 语音合成）
     dashscope:
       api-key: sk-ws-H.EIMYEXE.MAym.MEYCIQCw_s-3HFqnC9ojNRw3HsiKbhwBwMoEp4QbrnENpFPUwwIhAMGsw5UKHBSVRjgp8birECTaoI15VR9Vg3LlEa4OPIAh
       chat:
         options:
           model: qwen-plus
+      audio-speech:
+        options:
+          model: cosyvoice
+          voice: longwan
+          format: mp3
+    model:
+      audio:
+        speech: dashscope
