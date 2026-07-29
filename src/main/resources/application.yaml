@@ -5,7 +5,6 @@ spring:
   autoconfigure:
     exclude:
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeMultimodalEmbeddingAutoConfiguration
-      - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAudioTranscriptionAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeEmbeddingAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeRerankAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeVideoAutoConfiguration
@@ -28,6 +27,11 @@ spring:
         options:
           voice: longwan
           format: mp3
+      audio-transcription:
+        options:
+          model: paraformer-v2
+          format: mp3
     model:
       audio:
         speech: dashscope
+        transcription: dashscope
