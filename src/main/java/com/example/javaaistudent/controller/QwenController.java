@@ -1,4 +1,4 @@
-package com.example.javaaistudent;
+package com.example.javaaistudent.controller;
 
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
 import org.springframework.ai.chat.client.ChatClient;

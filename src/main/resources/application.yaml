@@ -26,7 +26,6 @@ spring:
           model: qwen-plus
       audio-speech:
         options:
-          model: cosyvoice
           voice: longwan
           format: mp3
     model:

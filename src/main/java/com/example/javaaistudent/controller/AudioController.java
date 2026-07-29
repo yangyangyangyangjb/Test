@@ -1,4 +1,4 @@
-package com.example.javaaistudent;
+package com.example.javaaistudent.controller;
 
 import com.alibaba.cloud.ai.dashscope.audio.tts.DashScopeAudioSpeechModel;
 import com.alibaba.cloud.ai.dashscope.audio.tts.DashScopeAudioSpeechOptions;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -33,28 +34,34 @@ public class AudioController {
     }
 
     /**
-     * 文字转语音
-     * GET http://localhost:18080/api/audio/tts?text=你好&voice=longwan
+     * 文字转语音（流式合成，收集后存为 mp3）
+     * GET http://localhost:18080/api/audio/tts?text=你好
      */
     @GetMapping("/tts")
     public String tts(
             @RequestParam(defaultValue = "大家好，我是人帅话好的徐庶") String text,
             @RequestParam(defaultValue = "longwan") String voice) throws IOException {
 
-        // 配置：人声、模型、格式
         DashScopeAudioSpeechOptions options = DashScopeAudioSpeechOptions.builder()
-                .voice(voice)             // 人声：longwan / longcheng / longhua ...
-                .model("cosyvoice")
+                .voice(voice)
+                .model("cosyvoice-v1")
                 .format("mp3")
                 .build();
 
-        // 调用合成
-        TextToSpeechResponse response = speechModel.call(
-                new TextToSpeechPrompt(text, options));
+        // 流式合成，收集所有 chunk
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        speechModel.stream(new TextToSpeechPrompt(text, options))
+                .toIterable()
+                .forEach(response -> {
+                    try {
+                        buffer.write(response.getResult().getOutput());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
 
-        byte[] audioBytes = response.getResult().getOutput();
+        byte[] audioBytes = buffer.toByteArray();
 
-        // 保存到本地
         Path saveDir = Paths.get(SAVE_DIR);
         Files.createDirectories(saveDir);
 
