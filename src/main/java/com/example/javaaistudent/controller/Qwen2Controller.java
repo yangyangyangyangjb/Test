@@ -3,9 +3,13 @@ package com.example.javaaistudent.controller;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.SafeGuardAdvisor;
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 阿里百炼 DashScope（通义千问）ChatController
@@ -35,6 +39,7 @@ public class Qwen2Controller {
                         当前服务的用户：
                         姓名: {name}，年龄: {age}，性别: {sex}
                         """)
+                .defaultAdvisors(new SimpleLoggerAdvisor(),new SafeGuardAdvisor(List.of("敏感词")))
                 .build();
 
         // 给模板中的占位符赋值
@@ -44,7 +49,7 @@ public class Qwen2Controller {
                         .param("age", "18")
                         .param("sex", "男")
                 )
-                .user("你好")
+                .user("你好,敏感词")
                 .call()
                 .content();
     }

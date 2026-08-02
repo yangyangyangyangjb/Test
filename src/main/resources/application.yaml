@@ -36,3 +36,10 @@ spring:
       audio:
         speech: dashscope
         transcription: dashscope
+
+# 打印SpringAI完整请求/响应日志（看到发给大模型的prompt、返回内容）
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+    # 可选：一并打印dashscope接口原始请求日志
+    com.alibaba.cloud.ai: DEBUG
