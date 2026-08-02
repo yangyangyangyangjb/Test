@@ -1,5 +1,6 @@
 package com.example.javaaistudent.controller;
 
+import com.example.javaaistudent.advisor.ReReadingAdvisor;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -39,7 +40,11 @@ public class Qwen2Controller {
                         当前服务的用户：
                         姓名: {name}，年龄: {age}，性别: {sex}
                         """)
-                .defaultAdvisors(new SimpleLoggerAdvisor(),new SafeGuardAdvisor(List.of("敏感词")))
+                .defaultAdvisors(
+                        new SimpleLoggerAdvisor(),
+                        new SafeGuardAdvisor(List.of("敏感词")),
+                        new ReReadingAdvisor()
+                )
                 .build();
 
         // 给模板中的占位符赋值
@@ -49,7 +54,7 @@ public class Qwen2Controller {
                         .param("age", "18")
                         .param("sex", "男")
                 )
-                .user("你好,敏感词")
+                .user("徐庶是谁？")
                 .call()
                 .content();
     }
