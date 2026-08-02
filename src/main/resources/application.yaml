@@ -9,6 +9,7 @@ spring:
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeRerankAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeVideoAutoConfiguration
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeAgentAutoConfiguration
+      - org.springframework.ai.model.chat.client.autoconfigure.ChatClientAutoConfiguration
   application:
     name: javaAiStudent-java
   ai:
