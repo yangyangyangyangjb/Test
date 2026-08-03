@@ -58,6 +58,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Redis 缓存 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
         <!-- Spring AI JDBC 聊天记忆仓库（持久化到 MySQL） -->
         <dependency>
             <groupId>org.springframework.ai</groupId>

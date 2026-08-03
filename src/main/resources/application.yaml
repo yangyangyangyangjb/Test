@@ -14,6 +14,12 @@ spring:
       idle-timeout: 300000
       connection-timeout: 20000
 
+  # Redis（聊天记忆缓存）
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
   autoconfigure:
     exclude:
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeMultimodalEmbeddingAutoConfiguration
