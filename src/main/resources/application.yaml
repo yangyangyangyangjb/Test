@@ -2,6 +2,18 @@ server:
   port: 18080
 
 spring:
+  # MySQL 数据源（聊天记忆持久化）
+  datasource:
+    url: jdbc:mysql://localhost:3306/learn?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 300000
+      connection-timeout: 20000
+
   autoconfigure:
     exclude:
       - com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeMultimodalEmbeddingAutoConfiguration

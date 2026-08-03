@@ -2,7 +2,6 @@ package com.example.javaaistudent.controller;
 
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
 import org.springframework.ai.chat.memory.ChatMemory;
-import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
@@ -23,13 +22,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemoryController {
 
     /**
-     * 内存版消息窗口记忆（默认保留最近 20 条消息）
+     * JDBC 版消息窗口记忆（注入配置类里定义的 Bean，持久化到 MySQL）
      */
-    private final ChatMemory chatMemory = MessageWindowChatMemory.builder().build();
+    private final ChatMemory chatMemory;
 
     private final DashScopeChatModel chatModel;
 
-    public MemoryController(DashScopeChatModel chatModel) {
+    public MemoryController(ChatMemory chatMemory, DashScopeChatModel chatModel) {
+        this.chatMemory = chatMemory;
         this.chatModel = chatModel;
     }
 
