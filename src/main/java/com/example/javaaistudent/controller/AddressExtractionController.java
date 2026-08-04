@@ -21,14 +21,6 @@ public class AddressExtractionController {
 
     private static final String EXTRACT_PROMPT = """
             请从下面这条文本中提取收货信息。
-            按字段精确抽取：
-              - name     收件人姓名
-              - phone    联系电话
-              - province 省
-              - city     市
-              - district 区/县
-              - detail   详细地址（街道、门牌号等）
-            找不到的字段填空字符串，不要编造。
             """;
 
     private final ChatClient chatClient;
